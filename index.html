@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>终末庭院</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #0a0a0d; overflow: hidden; width: 100%; height: 100%; }
+    canvas { display: block; }
+    #boot-loader {
+      position: fixed; inset: 0; z-index: 10; display: grid; place-items: center;
+      color: #c9a45c; background:
+        radial-gradient(circle at 50% 42%, rgba(90,20,32,.2), transparent 32%),
+        linear-gradient(#08080c, #030305);
+      font-family: "STKaiti", "KaiTi", "FangSong", serif;
+      transition: opacity .48s ease, visibility .48s ease;
+    }
+    #boot-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .boot-sigil { width: min(520px, 80vw); text-align: center; }
+    .boot-mark {
+      position: relative; width: 78px; height: 78px; margin: 0 auto 30px; transform: rotate(45deg);
+      border: 1px solid #7a6540; box-shadow: inset 0 0 28px rgba(138,31,45,.4), 0 0 34px rgba(201,164,92,.08);
+    }
+    .boot-mark::before, .boot-mark::after { content: ""; position: absolute; background: #8a1f2d; }
+    .boot-mark::before { width: 1px; height: 110px; left: 38px; top: -16px; }
+    .boot-mark::after { height: 1px; width: 110px; top: 38px; left: -16px; }
+    .boot-title { font-size: 42px; letter-spacing: 14px; color: #e8d6ad; text-indent: 14px; }
+    .boot-sub { margin-top: 8px; font: 11px "Microsoft YaHei", sans-serif; letter-spacing: 7px; color: #6d6558; }
+    .boot-track { height: 2px; margin-top: 44px; background: #211e1a; overflow: hidden; }
+    #boot-progress { width: 0; height: 100%; background: linear-gradient(90deg,#5a1420,#c9a45c,#f4ead2); transition: width .18s ease; }
+    .boot-meta { display: flex; justify-content: space-between; margin-top: 12px; font: 12px "Microsoft YaHei", sans-serif; color: #655e53; letter-spacing: 2px; }
+  </style>
+  <script type="module" crossorigin src="./assets/index-B26G5mDz.js"></script>
+</head>
+<body>
+  <div id="boot-loader">
+    <div class="boot-sigil">
+      <div class="boot-mark"></div>
+      <div class="boot-title">终末庭院</div>
+      <div class="boot-sub">TERMINUS GARDEN</div>
+      <div class="boot-track"><div id="boot-progress"></div></div>
+      <div class="boot-meta"><span>正在唤醒失落谱系</span><span id="boot-percent">0%</span></div>
+    </div>
+  </div>
+</body>
+</html>
